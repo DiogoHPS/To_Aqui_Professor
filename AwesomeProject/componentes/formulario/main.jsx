@@ -11,7 +11,7 @@ const MeuComponente = () => {
                     BEM-VINDO
                 </Text>
                 <Text id="h2" style={styles.h2}>
-                    Bem vindo de volta!
+                    Bem vindo de volta! asasasasa
                 </Text>
             </div>
 
