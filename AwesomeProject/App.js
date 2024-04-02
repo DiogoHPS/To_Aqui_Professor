@@ -1,18 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import MeuComponente from './componentes/formulario/main';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+import Main from './componentes/formulario/main';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('./componentes/formulario/img/imagemfundo.png')}
-        style={styles.imagem}
-      />
-      <View style={styles.componenteWrapper}>
-        <MeuComponente/>
+    // <NavigationContainer>
+      <View style={styles.container}>
+        <Image
+          source={require('./componentes/formulario/img/imagemfundo.png')}
+          style={styles.imagem}
+        />
+        <View style={styles.componenteWrapper}>
+          <Main/>
+        </View>
       </View>
-    </View>
+    // </NavigationContainer>
   );
 }
 

@@ -1,27 +1,17 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import Cadastro from '../cadastro/cadastro';
-import { useNavigation, NavigationContainer } from '@react-navigation/native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 
 
-
-const Main = () => {
-    const navigation = useNavigation(); // Obtenha a função de navegação
-
-  const handleRegisterPress = () => {
-    navigation.navigate(Cadastro) // Navegue para a tela 'Cadastro' quando o texto for clicado
-  };
-
+const Cadastro = () => {
   return (
-    <NavigationContainer>
     <View id="body" style={styles.body}>
         <section id="section" style={styles.section}>
             <div id="textologin" style={styles.textologin}>
                 <Text id="h1" style={styles.h1}>
-                    BEM-VINDO
+                    Registrar Sua Conta
                 </Text>
                 <Text id="h2" style={styles.h2}>
-                    Bem vindo de volta!
+                    informorme seus dados cadastrais!
                 </Text>
             </div>
 
@@ -38,22 +28,7 @@ const Main = () => {
             <TouchableOpacity style={styles.botao}>
                 <Text style={styles.textoBotao}>Entrar</Text>
             </TouchableOpacity>
-        <div id='registre-se'>
-            <Text >
-                Não tem uma conta?
-            </Text>
-
-            <TouchableOpacity onPress={handleRegisterPress}>
-              <Text  >
-                  Registre-se
-              </Text>
-            </TouchableOpacity>
-           
-            
-
-        </div>    
     </View>
-    </NavigationContainer>
   );
 };
 
@@ -130,4 +105,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Main;
+export default Cadastro;
