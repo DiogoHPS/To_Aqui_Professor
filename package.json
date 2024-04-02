@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "react-native-svg": "^15.1.0"
+  }
+}
