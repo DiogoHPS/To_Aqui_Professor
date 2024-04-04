@@ -1,24 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image} from 'react-native';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from "@react-navigation/stack"
 import Main from './componentes/formulario/main';
+import Cadastro from './componentes/cadastro/cadastro';
+
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
 
 export default function App() {
   return (
-    // <NavigationContainer>
-      <View style={styles.container}>
-        <Image
-          source={require('./componentes/formulario/img/imagemfundo.png')}
-          style={styles.imagem}
-        />
-        <View style={styles.componenteWrapper}>
-          <Main/>
-        </View>
-      </View>
-    // </NavigationContainer>
+  <NavigationContainer>
+    <Stack.Navigator screenOptions={{
+      tabBarStyle: {
+        backgroundColor: '#0D3068',
+        display: 'flex',
+        justifyContent: 'center',
+        height: 60,
+        alignItems: 'center',
+      },
+      headerShown: false,
+    }} >
+      <Stack.Screen name="Main" component={Main} />
+      <Stack.Screen name="Cadastro" component={Cadastro} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
+
+      
 
 const styles = StyleSheet.create({
   container: {

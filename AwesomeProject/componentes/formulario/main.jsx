@@ -1,20 +1,21 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import Cadastro from '../cadastro/cadastro';
-import { useNavigation, NavigationContainer } from '@react-navigation/native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 
 
-const Main = () => {
-    const navigation = useNavigation(); // Obtenha a função de navegação
-
-  const handleRegisterPress = () => {
-    navigation.navigate(Cadastro) // Navegue para a tela 'Cadastro' quando o texto for clicado
-  };
+const Main = ({ navigation }) => {
+    const handlePress = () => {
+        navigation.navigate('Cadastro');
+    }
 
   return (
-    <NavigationContainer>
-    <View id="body" style={styles.body}>
+    <>
+    <Image
+    source={require('./img/imagemfundo.png')}
+    style={styles.backgroundImage}
+   />
+    <View id="body" style={styles.container}>
+       
         <section id="section" style={styles.section}>
             <div id="textologin" style={styles.textologin}>
                 <Text id="h1" style={styles.h1}>
@@ -39,25 +40,39 @@ const Main = () => {
                 <Text style={styles.textoBotao}>Entrar</Text>
             </TouchableOpacity>
         <div id='registre-se'>
+        <div style={styles.link}>
             <Text >
                 Não tem uma conta?
             </Text>
-
-            <TouchableOpacity onPress={handleRegisterPress}>
+            <TouchableOpacity onPress={handlePress}>
               <Text  >
                   Registre-se
               </Text>
             </TouchableOpacity>
+        </div>
            
             
 
         </div>    
     </View>
-    </NavigationContainer>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    backgroundImage: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
+    },
     body:{
         height: "838px",
         width: "429px",
@@ -128,6 +143,14 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "#0D3068", // Cor do texto do botão
     },
+    link: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "5px",
+        color: "#FFFFFF",
+    }
 })
 
 export default Main;

@@ -1,17 +1,23 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image} from 'react-native';
+
 
 
 const Cadastro = () => {
   return (
-    <View id="body" style={styles.body}>
+    <>
+        <Image
+            source={require('../formulario/img/imagemfundo.png')}
+            style={styles.backgroundImage}
+        />
+    <View id="body" style={styles.container}>
         <section id="section" style={styles.section}>
             <div id="textologin" style={styles.textologin}>
                 <Text id="h1" style={styles.h1}>
                     Registrar Sua Conta
                 </Text>
                 <Text id="h2" style={styles.h2}>
-                    informorme seus dados cadastrais!
+                    informe seus dados cadastrais!
                 </Text>
             </div>
 
@@ -29,18 +35,23 @@ const Cadastro = () => {
                 <Text style={styles.textoBotao}>Entrar</Text>
             </TouchableOpacity>
     </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-    body:{
-        height: "838px",
-        width: "429px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    backgroundImage: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
     },
     section:{
         display: "flex",
