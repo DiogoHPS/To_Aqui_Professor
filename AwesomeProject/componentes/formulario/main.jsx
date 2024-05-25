@@ -13,9 +13,6 @@ const MeuComponente = () => {
                 <Text id="h2" style={styles.h2}>
                     Bem vindo de volta!
                 </Text>
-                <Text id="h2" style={styles.h2}>
-                    aiii bolsonaro
-                </Text>
             </div>
 
             <div id="login" style={styles.login}>

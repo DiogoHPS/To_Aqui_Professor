@@ -14,7 +14,7 @@ const Cadastro = () => {
         <section id="section" style={styles.section}>
             <div id="textologin" style={styles.textologin}>
                 <Text id="h1" style={styles.h1}>
-                    Bolsonaro
+                    Bem vindo
                 </Text>
                 <Text id="h2" style={styles.h2}>
                     informe seus dados cadastrais!
@@ -24,6 +24,9 @@ const Cadastro = () => {
             <div id="login" style={styles.login}>
                 <TextInput id="input" style={styles.input}
                     placeholder='Sua Matricula'
+                />
+                <TextInput id="input" style={styles.input}
+                    placeholder='Seu E-Mail'
                 />
                 <TextInput id="input" secureTextEntry={true} style={styles.input}
                     placeholder='Sua Senha'
