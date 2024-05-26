@@ -1,7 +1,7 @@
-// app/components/RegisterScreen.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Image, ImageBackground } from 'react-native';
 import CustomButton from './CustomButton';
+import BackgroundWrapper from './BackgroundWrapper';
 
 export default function RegisterScreen({ navigation }) {
   const [matricula, setMatricula] = useState('');
@@ -10,7 +10,7 @@ export default function RegisterScreen({ navigation }) {
   const [password, setPassword] = useState('');
 
   return (
-    <ImageBackground source={require('../../assets/imagemfundo.png')} style={styles.background}>
+    <BackgroundWrapper>
       <View style={styles.container}>
         <Image source={require('../../assets/iconeTap.png')} style={styles.icon} />
         <Text style={styles.header}>Cadastro</Text>
@@ -44,16 +44,11 @@ export default function RegisterScreen({ navigation }) {
 
         <Text style={styles.headerMinus} onPress={() => navigation.navigate('Login')}>Ja tem Login?</Text>
       </View>
-    </ImageBackground>
+    </BackgroundWrapper>
   );
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -85,7 +80,6 @@ const styles = StyleSheet.create({
     color: '#0D3068',
     borderRadius: 5,
   },
-  
   icon: {
     width: 100,
     height: 100,

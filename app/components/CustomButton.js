@@ -1,22 +1,22 @@
-// app/components/CustomButton.js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-export default function CustomButton({ onPress, title }) {
+const CustomButton = ({ title, onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#FED402',
     padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
+    borderRadius: 5,
     marginVertical: 10,
+    width: '100%',
+    alignItems: 'center',
   },
   buttonText: {
     color: '#0D3068',
@@ -24,3 +24,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+export default CustomButton;

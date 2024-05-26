@@ -1,14 +1,14 @@
-// app/components/RegisterScreen.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, ImageBackground, Image } from 'react-native';
 import CustomButton from './CustomButton';
+import BackgroundWrapper from './BackgroundWrapper';
 
 export default function RegisterScreen({ navigation }) {
   const [matricula, setMatricula] = useState('');
   const [password, setPassword] = useState('');
 
   return (
-    <ImageBackground source={require('../../assets/imagemfundo.png')} style={styles.background}>
+    <BackgroundWrapper>
       <View style={styles.container}>
             <Image source={require('../../assets/iconeTap.png')} style={styles.icon} />
             <Text style={styles.header}>Login</Text>
@@ -29,19 +29,15 @@ export default function RegisterScreen({ navigation }) {
             <CustomButton title="Login" onPress={() => {/* galere do banco*/}} />
 
             <Text style={styles.headerMinus} onPress={() => navigation.navigate('Register')}>Quer se registrar?</Text>
-
+            <Text style={styles.headerMinus} onPress={() => navigation.navigate('LostPass')}>Esqueci a senha</Text>
             <Text onPress={() => navigation.navigate('Home')}>home</Text>
         </View>
-    </ImageBackground>
+        </BackgroundWrapper>
   );
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -73,15 +69,6 @@ const styles = StyleSheet.create({
     color: '#0D3068',
     borderRadius: 5,
   },
-  link: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "5px",
-    color: "#FFFFFF",
-},
-
 icon: {
     width: 100,
     height: 100,
